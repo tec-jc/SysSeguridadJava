@@ -14,7 +14,8 @@ import sysseguridad.appweb.utils.*;
 
 @WebServlet(name = "RolServlet", urlPatterns = {"/Rol"})
 public class RolServlet extends HttpServlet {
-
+    // <editor-fold defaultstate="collapsed" desc="Métodos para procesar las solicitudes get o post del Servlet">
+    
     private Rol obtenerRol(HttpServletRequest request) {
         String accion = Utilidad.getParameter(request, "accion", "index");
         Rol rol = new Rol();
@@ -134,7 +135,9 @@ public class RolServlet extends HttpServlet {
             Utilidad.enviarError(ex.getMessage(), request, response);
         }
     }
+    // </editor-fold>
     
+    // <editor-fold defaultstate="collapsed" desc="Métodos para procesar las peticiones Get y Post">
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -196,4 +199,5 @@ public class RolServlet extends HttpServlet {
             }
         });
     }
+    //</editor-fold>
 }
